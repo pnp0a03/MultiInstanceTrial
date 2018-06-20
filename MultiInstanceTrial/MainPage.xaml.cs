@@ -83,7 +83,7 @@ namespace MultiInstanceTrial
         {
             try
             {
-                MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(NAME_MMF, SIZE_MMF);
+                using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(NAME_MMF, SIZE_MMF))
                 {
                     string text = "";
 
