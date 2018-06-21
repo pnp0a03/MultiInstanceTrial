@@ -27,7 +27,7 @@ namespace MultiInstanceTrial
             InitializeComponent();
 
             ApplicationView.GetForCurrentView().Title = ((MultiInstanceTrial.App)App.Current).Instance.Key;
-            tbIAm.Text = "I am " + ((MultiInstanceTrial.App)App.Current).Instance.Key;
+            IAmText.Text = "I am " + ((MultiInstanceTrial.App)App.Current).Instance.Key;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -52,12 +52,7 @@ namespace MultiInstanceTrial
             });
         }
 
-        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
-        {
-            ApplicationData.Current.SignalDataChanged();
-        }
-
-        private async void BtnBrowse_Click(object sender, RoutedEventArgs e)
+        private async void BrowseButton_Click(object sender, RoutedEventArgs e)
         {
             var fop = new FileOpenPicker
             {
@@ -108,12 +103,12 @@ namespace MultiInstanceTrial
             }
         }
 
-        private void TextBoxInput_KeyDown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+        private void InputTextBox_KeyDown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
-                UpdateMMFTextArea(TextBoxInput.Text);
-                TextBoxInput.Text = "";
+                UpdateMMFTextArea(InputTextBox.Text);
+                InputTextBox.Text = "";
             }
         }
 
@@ -122,12 +117,12 @@ namespace MultiInstanceTrial
             // Instance list
 
             // Clear current instance list
-            LbInstances.Items.Clear();
+            InstancesListBox.Items.Clear();
 
             // Enum instances and update the list
             foreach(var instance in AppInstance.GetInstances())
             {
-                LbInstances.Items.Add(instance.Key);
+                InstancesListBox.Items.Add(instance.Key);
             }
 
             // Load image
@@ -139,9 +134,9 @@ namespace MultiInstanceTrial
                     {
                         var bi = new BitmapImage();
                         await bi.SetSourceAsync(stream);
-                        ImgSample.Source = bi;
-                        TbHeader.Visibility = Visibility.Collapsed;
-                        tbImageFileName.Text = filename;
+                        SampleImage.Source = bi;
+                        ImagePlaceholderText.Visibility = Visibility.Collapsed;
+                        ImageFileNameText.Text = filename;
                     }
                 }
             }
@@ -151,7 +146,7 @@ namespace MultiInstanceTrial
             using (MemoryMappedViewStream stream = mmf.CreateViewStream(0, 0))
             using (BinaryReader reader = new BinaryReader(stream))
             {
-                        TbMMF.Text = reader.ReadString();
+                        MemoryMappedFileText.Text = reader.ReadString();
             }
 
             return true;

@@ -7,12 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <!--<Page.TopAppBar>
-        <CommandBar DefaultLabelPosition="Right">
-            <AppBarButton x:Name="BtnRefresh" Icon="Refresh" Label="Refresh" Click="BtnRefresh_Click"/>
-            <AppBarButton x:Name="BtnBrowse" Icon="BrowsePhotos" Label="Choose Image" Click="BtnBrowse_Click"/>
-        </CommandBar>
-    </Page.TopAppBar>-->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -22,14 +16,14 @@
             </Grid.ColumnDefinitions>
             <StackPanel Background="AliceBlue" Padding="10,0,10,0">
                 <TextBlock Text="Instances" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,0,10"/>
-                <TextBlock x:Name="tbIAm" />
+                <TextBlock x:Name="IAmText" />
                 <TextBlock Text="Other instances" />
-                <ListBox x:Name="LbInstances" />
+                <ListBox x:Name="InstancesListBox" />
             </StackPanel>
             <StackPanel Grid.Column="1" Background="BlanchedAlmond" Padding="10,0,10,0">
                 <TextBlock Text="MMF Text sync" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,0,10"/>
-                <TextBox x:Name="TextBoxInput" KeyDown="TextBoxInput_KeyDown" PlaceholderText="Type text and enter"/>
-                <TextBlock x:Name="TbMMF" Text="Memory Mapped File's content here" />
+                <TextBox x:Name="InputTextBox" KeyDown="InputTextBox_KeyDown" PlaceholderText="Type text and enter"/>
+                <TextBlock x:Name="MemoryMappedFileText" Text="Memory Mapped File's content here" />
             </StackPanel>
             <Grid Grid.Column="2" Padding="10,0,10,0" Background="LightPink">
                 <Grid.RowDefinitions>
@@ -43,11 +37,11 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="tbImageFileName" IsEnabled="False" />
-                    <Button x:Name="Btnbrowse" Content="Browse" Click="BtnBrowse_Click" Grid.Column="1" Margin="10,0,0,0"/>
+                    <TextBox x:Name="ImageFileNameText" IsEnabled="False" />
+                    <Button x:Name="BrowseButton" Content="Browse" Click="BrowseButton_Click" Grid.Column="1" Margin="10,0,0,0"/>
                 </Grid>
-                <Image Grid.Row="2" x:Name="ImgSample"/>
-                <TextBlock Grid.Row="2" Text="Click 'Choose Image' to show the image here." VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2"  x:Name="TbHeader" />
+                <Image Grid.Row="2" x:Name="SampleImage"/>
+                <TextBlock Grid.Row="2" Text="Click 'Choose Image' to show the image here." VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2"  x:Name="ImagePlaceholderText" />
             </Grid>
         </Grid>
     </Grid>
