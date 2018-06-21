@@ -1,4 +1,5 @@
-﻿using Windows.ApplicationModel;
+﻿using System;
+using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Security.Cryptography;
 using Windows.UI.Xaml;
@@ -23,8 +24,7 @@ namespace MultiInstanceTrial
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Instance = AppInstance.FindOrRegisterInstanceForKey(CryptographicBuffer.GenerateRandomNumber().ToString());
-
+            //Instance = AppInstance.FindOrRegisterInstanceForKey(CryptographicBuffer.GenerateRandomNumber().ToString());
             Frame rootFrame = Window.Current.Content as Frame;
             if (rootFrame == null)
             {
@@ -52,7 +52,7 @@ namespace MultiInstanceTrial
                 var protocolArgs = (ProtocolActivatedEventArgs)args;
                 //string url = protocolArgs.Uri.AbsoluteUri;
 
-                Instance = AppInstance.FindOrRegisterInstanceForKey(CryptographicBuffer.GenerateRandomNumber().ToString());
+                //Instance = AppInstance.FindOrRegisterInstanceForKey(CryptographicBuffer.GenerateRandomNumber().ToString());
 
                 if(null == rootFrame)
                 {
@@ -72,6 +72,11 @@ namespace MultiInstanceTrial
         {
             SuspendingDeferral deferral = e.SuspendingOperation.GetDeferral();
             deferral.Complete();
+        }
+
+        public static implicit operator ApplicationInitializationCallbackParams(App v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
