@@ -21,10 +21,13 @@ namespace MultiInstanceTrial
     {
         private const string NAME_MMF = "Local\\hogehoge";
         private const long SIZE_MMF = 10000;
+        private MemoryMappedFile Mmf = null;
 
         public MainPage()
         {
             InitializeComponent();
+
+            Mmf = MemoryMappedFile.CreateOrOpen(NAME_MMF, SIZE_MMF);
 
             ApplicationView.GetForCurrentView().Title = ((MultiInstanceTrial.App)App.Current).Instance.Key;
             IAmText.Text = "I am " + ((MultiInstanceTrial.App)App.Current).Instance.Key;
@@ -78,24 +81,22 @@ namespace MultiInstanceTrial
         {
             try
             {
-                using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(NAME_MMF, SIZE_MMF))
+                //MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(NAME_MMF, SIZE_MMF));
+                string text = "";
+
+                using (MemoryMappedViewStream stream = Mmf.CreateViewStream(0, 0))
+                using (BinaryReader reader = new BinaryReader(stream))
                 {
-                    string text = "";
-
-                    using (MemoryMappedViewStream stream = mmf.CreateViewStream(0, 0))
-                    using (BinaryReader reader = new BinaryReader(stream))
-                    {
-                        text = reader.ReadString();
-                    }
-
-                    using (MemoryMappedViewStream stream = mmf.CreateViewStream(0, 0))
-                    using (BinaryWriter writer = new BinaryWriter(stream))
-                    {
-                        writer.Write((string.IsNullOrEmpty(text) ? "" : text + "\n") + inputText);
-                    }
-
-                    ApplicationData.Current.SignalDataChanged();
+                    text = reader.ReadString();
                 }
+
+                using (MemoryMappedViewStream stream = Mmf.CreateViewStream(0, 0))
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    writer.Write((string.IsNullOrEmpty(text) ? "" : text + "\n") + inputText);
+                }
+
+                ApplicationData.Current.SignalDataChanged();
             }
             catch (FileNotFoundException)
             {
@@ -142,8 +143,8 @@ namespace MultiInstanceTrial
             }
 
             // Show MMF Content
-            using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(NAME_MMF, SIZE_MMF))
-            using (MemoryMappedViewStream stream = mmf.CreateViewStream(0, 0))
+            //using (MemoryMappedFile mmf = MemoryMappedFile.CreateOrOpen(NAME_MMF, SIZE_MMF))
+            using (MemoryMappedViewStream stream = Mmf.CreateViewStream(0, 0))
             using (BinaryReader reader = new BinaryReader(stream))
             {
                         MemoryMappedFileText.Text = reader.ReadString();
