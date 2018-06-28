@@ -73,10 +73,5 @@ namespace MultiInstanceTrial
             SuspendingDeferral deferral = e.SuspendingOperation.GetDeferral();
             deferral.Complete();
         }
-
-        public static implicit operator ApplicationInitializationCallbackParams(App v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
