@@ -1,0 +1,2 @@
+MainPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\x64\Release\MultiInstanceTrial_1.0.0.0_x64.appx
+SymbolPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\AppPackages\MultiInstanceTrial_1.0.0.0_Test\MultiInstanceTrial_1.0.0.0_x64.appxsym
