@@ -1,0 +1,4 @@
+MainPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM64\Release\Upload\MultiInstanceTrial_1.0.0.0_ARM64.msix
+SymbolPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM64\Release\Upload\MultiInstanceTrial_1.0.0.0\MultiInstanceTrial_1.0.0.0_ARM64.appxsym
+ResourcePack=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM64\Release\Upload\MultiInstanceTrial_1.0.0.0_scale-125.msix
+ResourcePack=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM64\Release\Upload\MultiInstanceTrial_1.0.0.0_scale-150.msix

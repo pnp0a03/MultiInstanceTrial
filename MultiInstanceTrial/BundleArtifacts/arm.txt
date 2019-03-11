@@ -1,4 +1,2 @@
-MainPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM\Release\MultiInstanceTrial_1.0.0.0_ARM.appx
+MainPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM\Release\MultiInstanceTrial_1.0.0.0_ARM.msix
 SymbolPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\AppPackages\MultiInstanceTrial_1.0.0.0_Test\MultiInstanceTrial_1.0.0.0_ARM.appxsym
-ResourcePack=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM\Release\MultiInstanceTrial_1.0.0.0_scale-125.appx
-ResourcePack=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM\Release\MultiInstanceTrial_1.0.0.0_scale-150.appx

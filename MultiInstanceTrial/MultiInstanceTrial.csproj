@@ -11,21 +11,22 @@
     <AssemblyName>MultiInstanceTrial</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>MultiInstanceTrial_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <PackageCertificateKeyFile>MultiInstanceTrial_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|x64|arm|arm64</AppxBundlePlatforms>
     <UapDefaultAssetScale>100</UapDefaultAssetScale>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <PackageCertificateThumbprint>D74AA8D51118F876D036458A2E24AE6F50D68A8B</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -75,6 +76,30 @@
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
@@ -116,6 +141,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="MultiInstanceTrial_StoreKey.pfx" />
     <None Include="MultiInstanceTrial_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +168,7 @@
     <Content Include="Assets\Wide310x150Logo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
@@ -158,7 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.1.9</Version>
+      <Version>6.2.3</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
