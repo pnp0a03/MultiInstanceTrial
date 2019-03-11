@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4" xmlns:iot2="http://schemas.microsoft.com/appx/manifest/iot/windows10/2" IgnorableNamespaces="uap uap5 mp desktop4 iot2">
-  <Identity Name="55884DDLG.DDLG.MultiInstanceTrial" Publisher="CN=0ADFD460-31D2-4A92-A4A8-DF66FF78B5F8" Version="1.0.0.0" />
+  <Identity Name="55884DDLG.DDLG.MultiInstanceTrial" Publisher="CN=0ADFD460-31D2-4A92-A4A8-DF66FF78B5F8" Version="1.0.3.0" />
   <mp:PhoneIdentity PhoneProductId="0a87bad3-fbb9-47da-b0ff-5f61ae48ac02" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>DDLG.MultiInstanceTrial</DisplayName>

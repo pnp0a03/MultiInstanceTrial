@@ -1,1 +1,1 @@
-D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM64\Release\Upload\MultiInstanceTrial_1.0.0.0\MultiInstanceTrial_1.0.0.0_x86_x64_arm_arm64.msixbundle
+D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\ARM64\Release\Upload\MultiInstanceTrial_1.0.3.0\MultiInstanceTrial_1.0.3.0_x86_x64_arm_arm64.msixbundle
