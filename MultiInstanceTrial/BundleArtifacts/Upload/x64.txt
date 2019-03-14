@@ -1,2 +1,2 @@
-MainPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\x64\Release\Upload\MultiInstanceTrial_1.0.3.0_x64.msix
-SymbolPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\x64\Release\Upload\MultiInstanceTrial_1.0.3.0\MultiInstanceTrial_1.0.3.0_x64.appxsym
+MainPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\x64\Release\Upload\MultiInstanceTrial_1.0.7.0_x64.msix
+SymbolPackage=D:\Github\MultiInstanceTrial\MultiInstanceTrial\bin\x64\Release\Upload\MultiInstanceTrial_1.0.7.0\MultiInstanceTrial_1.0.7.0_x64.appxsym
